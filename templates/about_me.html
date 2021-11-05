@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubblz Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style_am.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<body>
+
+<!----header/home page----->
+
+    <section class = "header">
+            <div class="color_overlay"></div>
+            <nav>
+                <a href="index.html"><img class="img" src="{{url_for('static', filename='images/logo1.png')}}"></a>
+                <div class = "nav-links" id="navLinks">
+                  <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="http://www.linkedin.com/in/connor-florczyk">About Me</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        <div class = "text-box">
+            <h1>Fuck You</h1>
+            <p>This website was created for the average person to quickly and easily understand their investment portfolio.<br>
+                Simply enter the tickers/weights and explore your investments.</p>
+        </div>
+        <div class = "photo-credits">
+            <a href="https://ivebenthinking.substack.com/" target="_blank" rel="noopener noreferrer">
+                <p>Photo by Benjamin Testani</p></a>
+        </div>
+    </section>
+
+<!----footer----->
+
+    <section class="footer">
+        <p>Not really sure what to put down here</p>
+        <div class="icon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <p class="copyright">Connor Florczyk © 2021</p>
+    </section>
+
+</body>
+</html>

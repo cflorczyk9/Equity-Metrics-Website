@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubblz Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+
+<!----header/home page----->
+
+    <section class = "header">
+            <div class="color_overlay"></div>
+            <nav>
+                <a href="index.html"><img class="img" src="{{url_for('static', filename='images/logo1.png')}}"></a>
+                <div class = "nav-links" id="navLinks">
+                  <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#Return">Return</a></li>
+                        <li><a href="#Metrics">Metrics</a></li>
+                        <li><a href="#Monte_Carlo">Monte Carlo</a></li>
+                        <li><a href="about_me">About Me</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        <div class = "text-box">
+            <h1>Bubblz</h1>
+            <p>This website was created for the average person to quickly and easily understand risk and return matric assosiated with a single stock.<br>
+                Simply enter the ticker and explore your investment.</p>
+        </div>
+        <div class = "photo-credits">
+            <a href="https://ivebenthinking.substack.com/" target="_blank" rel="noopener noreferrer">
+                <p>Photo by Benjamin Testani</p></a>
+        </div>
+    </section>
+
+<!----user input----->
+
+
+    <section class="enter-tickers">
+      <h1>Enter your tickers below</h1>
+      <p>(Data goes back as far as possible - Since IPO)</p>
+        <div>
+            <form action="#" method="post">
+              <p>Ticker:</p>
+              <p><input type="text" name="nm"></p>
+              <p><input type="submit" value="Submit"></p>
+            </form>
+        </div>
+    </section>
+<!----historical return vs benchmark----->
+
+    <section class="enter-tickers">
+        <h1 id="Return">Your portfolios Historical Return</h1>
+        <img class="img" src="{{url_for('static', filename='images/chart1.png')}}">
+    </section>
+
+<!----portfolio metrics----->
+
+    <section class="enter-tickers" id="ratios">
+        <h1 id="Metrics">Your Portfolios Metrics</h1>
+        <p>You can enter either the number of shares or the value.</p>
+        <table>
+          <tr>
+            <th>Ratio</th>
+            <th>Value</th>
+            <th>What is this?</th>
+          </tr>
+          <tr>
+            <td><h3>Mean Return</h3></td>
+            <td>XX.XX</td>
+            <td>A mean return (also known as expected return) is the estimated profit or loss an investor expects to
+                achieve from a portfolio of investments.</td>
+          </tr>
+          <tr>
+            <td><h3>Beta</h3></td>
+            <td>XX.XX</td>
+            <td>Beta is a measure of the volatility–or systematic risk–of a security or portfolio compared to the
+                market as a whole.</td>
+          </tr>
+          <tr>
+            <td><h3>Jensen’s Alpha</h3></td>
+            <td>XX.XX</td>
+            <td>Alpha refers to excess returns earned on an investment above the benchmark return. (This ones fake)</td>
+          </tr>
+          <tr>
+            <td><h3>Sharpe Ratio</h3></td>
+            <td>XX.XX</td>
+            <td>The Sharpe ratio adjusts a portfolio’s past performance—or expected future performance—for the excess
+                risk that was taken by the investor.</td>
+          </tr>
+          <tr>
+            <td><h3>Treynor Ratio</h3></td>
+            <td>XX.XX</td>
+            <td>The Treynor ratio is a risk/return measure that allows investors to adjust a portfolio's returns for
+                systematic risk.</td>
+          </tr>
+          <tr>
+            <td><h3>R-squared</h3></td>
+            <td>XX.XX</td>
+            <td>In investing, R-squared is generally interpreted as the percentage of a fund or security's movements
+                that can be explained by movements in a benchmark index.</td>
+          </tr>
+          <tr>
+            <td><h3>Information Ratio (IR)</h3></td>
+            <td>XX.XX</td>
+            <td>IR is a measurement of portfolio returns above the returns of a benchmark, usually an index such as
+                the S&P 500, to the volatility of those returns.</td>
+          </tr>
+          <tr>
+            <td><h3>Modigliani Ratio (M2 Ratio)</h3></td>
+            <td>XX.XX</td>
+            <td>M2 shows the return on an investment adjusted for risk in comparison to a benchmark.</td>
+          </tr>
+          <tr>
+            <td><h3>Sortino Ratio</h3></td>
+            <td>XX.XX</td>
+            <td>The Sortino ratio differs from the Sharpe ratio in that it only considers the standard deviation of the
+                downside risk, rather than that of the entire (upside + downside) risk.</td>
+          </tr>
+          <tr>
+            <td><h3>Maximum Drawdown</h3></td>
+            <td>XX.XX</td>
+            <td>MDD is a measure of an asset's largest price drop from a peak to a trough.</td>
+          </tr>
+          <tr>
+            <td><h3>Value At Risk (Var) - 90%</h3></td>
+            <td>XX.XX</td>
+            <td>VaR is a way to quantify the risk of potential losses for an investment (90% Confidence Level).</td>
+          </tr>
+          <tr>
+            <td><h3>Value At Risk (Var) - 95%</h3></td>
+            <td>XX.XX</td>
+            <td>VaR is a way to quantify the risk of potential losses for an investment (95% Confidence Level).</td>
+          </tr>
+          <tr>
+            <td><h3>Value At Risk (Var) - 99%</h3></td>
+            <td>XX.XX</td>
+            <td>VaR is a way to quantify the risk of potential losses for an investment (99% Confidence Level).</td>
+          </tr>
+        </table>
+    </section>
+
+<!----monte carlo simulation----->
+
+    <section class="enter-tickers">
+        <h1 id="Monte_Carlo">Monte Carlo Simulation</h1>
+        <h2>The Simulation</h2>
+            <img class="img" src="{{url_for('static', filename='images/chart2.jpg')}}">
+        <h2>The Results</h2>
+            <img class="img" src="{{url_for('static', filename='images/chart3.jpg')}}">
+    </section>
+<!----portfolio metrics----->
+
+<!----footer----->
+
+    <section class="footer">
+        <p>Not really sure what to put down here</p>
+        <div class="icon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <p class="copyright">Connor Florczyk © 2021</p>
+    </section>
+
+    <script>
+
+    var mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+
+</body>
+</html>
